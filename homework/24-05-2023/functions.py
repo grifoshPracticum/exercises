@@ -7,3 +7,8 @@ GOODS = [
     {'name': 'bread', 'price': 1.00, 'quantity': 3},
     {'name': 'milk', 'price': 2.00, 'quantity': 2}
 ]
+
+# Попробуй использовать подход "функция возвращает функцию", если надо - на уроке дам подсказку.
+# Еще у меня в моей ветке есть решение, покажу его тебе и сравним с тем что сделал ты
+# Очень хорошая теория к материалу лежит тут (плавная подводка к теме декораторы):
+# https://towardsdatascience.com/functions-that-return-functions-higher-order-functions-and-decorators-in-python-with-examples-4282742cdd3e
