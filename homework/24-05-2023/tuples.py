@@ -17,10 +17,9 @@ def tuple_to_int2(my_tuple):
     for digit in reversed(my_tuple):
         result += digit * multiplier
         multiplier *= 10
-
     return result
 
-print(tuple_to_int2((1, 2, 7)))
+print(tuple_to_int2((60, 24444, 7)))
 
 
 # и еще одну которая делает обратно => 127 => (1,2,7)

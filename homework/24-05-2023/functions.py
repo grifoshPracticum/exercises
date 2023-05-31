@@ -4,20 +4,19 @@
 
 
 GOODS = [
-    {'name': 'bread',   'price': 1.00, 'quantity': 3, "currency": "USD"},
-    {'name': 'milk',    'price': 2.00, 'quantity': 2, "currency": "USD"},
-    {'name': 'gold',    'price': 8.00, 'quantity': 5, "currency": "USD"},
-    {'name': 'silver',  'price': 2.00, 'quantity': 4, "currency": "USD"},
+    {'name': 'bread',   'price': 1.00, 'quantity': 3},
+    {'name': 'milk',    'price': 2.00, 'quantity': 2},
+    {'name': 'gold',    'price': 8.00, 'quantity': 5},
+    {'name': 'silver',  'price': 2.00, 'quantity': 4},
 ]
 
-
+#Паттерн "Фабрика" / "Plant"
 def create_print_receipt(currency):
-    def print_receipt(list_of_goods):
+    def print_receipt(list_of_goods):                                                   #сделать через list comprehesion
         amount = 0
         for item in list_of_goods:
             amount += item['price'] * item['quantity']
         print(f"Сумма чека: {amount} {currency}")
-
     return print_receipt
 
 
