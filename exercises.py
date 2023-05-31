@@ -68,8 +68,7 @@
 # def combine_lists_by_element(list1, list2):
 #     if len(list1) != len(list2):
 #         raise ValueError('Count of entries in lists does not match')
-#     new_list = [element1 + element2 for element1, element2 in zip(list1, list2)]
-#     return new_list
+#     return [element1 + element2 for element1, element2 in zip(list1, list2)]
 #
 # list1 = [1, 2, 3]
 # list2 = [10, 20, 30]
@@ -121,13 +120,17 @@
 # python enumirate
 # Как итерироваться по 2 массивам?
 # Говорили, что .append - медленный способ
-def combine_lists(list1, list2):                                                                              #to_review
-    new_list = []
+
+def combine_lists(list1, list2):                                                                                  #to_do
+    # Чем .extend отличается от .append?
     if len(list1) != len(list2):
         raise ValueError('Count of entries in lists is not matched')
+    new_list = []
+    # Как создать пустой massive с длиной list1?
     for i in range(len(list1)):
         new_element = list1[i] + list2[-i-1]
-        new_list.extend([new_element])
+        new_list.extend([new_element])                                                           # lvl непросвещенный :)
+                                                                                                 # А давай-ка с list comprehension :)
     return new_list
 
 print(combine_lists([1, 2, 3], [10, 20, 30]))
@@ -153,12 +156,11 @@ print(combine_lists([1, 2, 3], [10, 20, 30]))
 
 # # tuples tasks:
 # 1. Write a Python program to add an item to a tuple in a specific index
-# def add_item_to_tuple(tuple_obj, item, index):
-#     if index < 0 or index > len(tuple_obj):                                       # Этот код не добавляет ничего нового
-#         raise IndexError('Index out of range')                                    # к стандартному обработчику python
-#
-#     new_tuple = tuple_obj[:index] + (item,) + tuple_obj[index:]
-#     return new_tuple
+def add_item_to_tuple(tuple_obj, item, index):
+    if index < 0 or index > len(tuple_obj):                                       # Этот код не добавляет ничего нового
+        raise IndexError('Index out of range')                                    # к стандартному обработчику python
+    new_tuple = tuple_obj[:index] + (item,) + tuple_obj[index:]
+    return new_tuple
 
 # 2. Напиши функцию которая принимает тупл и делает его клон
 #    (надо тут еще обсудить такое понятие как scope)
@@ -168,13 +170,19 @@ print(combine_lists([1, 2, 3], [10, 20, 30]))
 #   Input (1,2,7)
 #   Output: 127
 
-# def tuple_to_int(my_tuple):
-#     a = ""
-#     for value in my_tuple:
-#         a += str(value)
-#     return int(a)
-#
-# print(tuple_to_int((1, 2, 7)))
+def tuple_to_int(my_tuple):
+    a = ""                                                                                 # Плохо пахнет. Переделать.
+    for value in my_tuple:                                                                 # У каждого числа есть разряд
+        a += str(value)                                                                    # Используй это для переделки
+    return int(a)
+
+print(tuple_to_int((1, 2, 7)))
+
+a = {"x":100, "y":200}
+b = {"x":100, "y":200}
+
+print(a==b)
+
 
 # 3.2
 #   И еще одну которая делает обратно:
