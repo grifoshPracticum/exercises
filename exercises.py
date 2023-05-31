@@ -143,13 +143,7 @@ print(combine_lists([1, 2, 3], [10, 20, 30]))
 #    б. Выдать все в одном массиве: [1,2,3,1,2,3,1,2,3,4,5,5,3,2,3]
 #    в. Выдать массив, массивов, где первый - это все элементы под индексом 0, второй - все элементы под индексом 1, и так далее. Например: [[1,11,111,5,3],[2,22,222,5,None],...]
 
-# def summ_of_all_elements(list_of_lists):
-#     a = 0
-#     for one_list in list_of_lists:
-#         a += sum(one_list)
-#     return a
-#
-# summ_of_all_elements([[1, 2, 3], [10, 20, 30]])
+
 
 
 
@@ -170,18 +164,9 @@ def add_item_to_tuple(tuple_obj, item, index):
 #   Input (1,2,7)
 #   Output: 127
 
-def tuple_to_int(my_tuple):
-    a = ""                                                                                 # Плохо пахнет. Переделать.
-    for value in my_tuple:                                                                 # У каждого числа есть разряд
-        a += str(value)                                                                    # Используй это для переделки
-    return int(a)
 
-print(tuple_to_int((1, 2, 7)))
 
-a = {"x":100, "y":200}
-b = {"x":100, "y":200}
 
-print(a==b)
 
 
 # 3.2
@@ -208,22 +193,3 @@ print(a==b)
 #     return tuple(digits)
 # print(int_to_tuple(127))
 
-# 4. Напиши программу которая: принимает данных про людей - рост, вес, имя.
-#    Данных таких - много, сотни тысяч...
-#    Вторая часть программы должна по весу и росту выдавать имена всех людей подходящих под критерий.
-#    Тут много концептов зарыто, поковыряй сам, может в несколько итераций обсудим.
-
-
-# people_data = [
-#         {'name': 'John', 'height': 180, 'weight': 75},
-#         {'name': 'Alice', 'height': 165, 'weight': 60},
-#         {'name': 'Bob', 'height': 175, 'weight': 80},
-#         # Другие записи о людях...
-#     ]
-#
-# def filter_people_by_criteria(people_data, height_threshold, weight_threshold):
-#     filtered_people = []
-#     for person in people_data:
-#         if person['height'] >= height_threshold and person['weight'] <= weight_threshold:
-#             filtered_people.append(person['name'])
-#     return filtered_people
