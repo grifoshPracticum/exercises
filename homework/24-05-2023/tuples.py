@@ -20,6 +20,9 @@ def count_digits(number):
 
 
 def tuple_to_int2(tuple):
+    '''
+    Function doc
+    '''
     result = digits = 0
     for number in reversed(tuple):
         result += number * pow(10, digits)
@@ -28,23 +31,26 @@ def tuple_to_int2(tuple):
     return result
 
 
-print(tuple_to_int2((60, 24444, 7)))
-
-
-def tuple_to_int(my_tuple):
-    number_str = ''.join(str(value) for value in my_tuple)
-    return int(number_str)
+# print(tuple_to_int2((60, 24444, 7)))
+#
+#
+# def tuple_to_int(my_tuple):
+#     number_str = ''.join(str(value) for value in my_tuple)
+#     return int(number_str)
 
 # print(tuple_to_int((1, 2, 7)))
 # print(tuple_to_int((60, 24444, 7)))
 
 
-
-
-
 # и еще одну которая делает обратно => 127 => (1,2,7)
 
+def number_to_tuple(input_string: int) -> tuple:
+    return tuple(
+        (int(num) for num in str(input_string))
+    )
 
+
+print(number_to_tuple(127))
 
 # - напиши программу которая: принимает данных про людей - рост, вес, имя. данных таких - много, сотни тысяч...
 # Вторая часть программы должна по весу и росту выдавать имена всех людей подходящих под критерий.
