@@ -10,14 +10,23 @@
 # print(tuple_to_int((1, 2, 7)))
 
 
-def tuple_to_int2(my_tuple):
-    result = 0
-    multiplier = 1
+def count_digits(number):
+    digits = 10
+    count = 1
+    while number / digits > 1:
+        digits *= 10
+        count += 1
+    return count
 
-    for digit in reversed(my_tuple):
-        result += digit * multiplier
-        multiplier *= 10
+
+def tuple_to_int2(tuple):
+    result = digits = 0
+    for number in reversed(tuple):
+        result += number * pow(10, digits)
+        digits += count_digits(number)
+        print(number, digits, result)
     return result
+
 
 print(tuple_to_int2((60, 24444, 7)))
 
@@ -26,8 +35,8 @@ def tuple_to_int(my_tuple):
     number_str = ''.join(str(value) for value in my_tuple)
     return int(number_str)
 
-print(tuple_to_int((1, 2, 7)))
-print(tuple_to_int((60, 24444, 7)))
+# print(tuple_to_int((1, 2, 7)))
+# print(tuple_to_int((60, 24444, 7)))
 
 
 
