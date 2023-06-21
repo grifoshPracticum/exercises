@@ -12,12 +12,11 @@ GOODS = [
 
 #Паттерн "Фабрика" / "Plant"
 def create_print_receipt(currency):
-    def print_receipt(list_of_goods):                                                   #сделать через list comprehesion
-        amount = 0
-        for item in list_of_goods:
-            amount += item['price'] * item['quantity']
+    def print_receipt(list_of_goods):
+        amount = sum(item['price'] * item['quantity'] for item in list_of_goods)
         print(f"Сумма чека: {amount} {currency}")
     return print_receipt
+
 
 
 print_receipt_usd = create_print_receipt("долларов")

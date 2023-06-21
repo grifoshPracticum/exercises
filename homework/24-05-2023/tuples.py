@@ -22,6 +22,17 @@ def tuple_to_int2(my_tuple):
 print(tuple_to_int2((60, 24444, 7)))
 
 
+def tuple_to_int(my_tuple):
+    number_str = ''.join(str(value) for value in my_tuple)
+    return int(number_str)
+
+print(tuple_to_int((1, 2, 7)))
+print(tuple_to_int((60, 24444, 7)))
+
+
+
+
+
 # и еще одну которая делает обратно => 127 => (1,2,7)
 
 
