@@ -17,4 +17,14 @@ print(dict_maker(name='Anna', salary=200, city='Berlin'))
 # Key2: <key>, value: <value>.
 
 
+data = {
+    'one': 1,
+    'two': 2
+}
 
+def dict_printer(**kwargs):
+    for kwarg in kwargs:
+        print(kwarg, kwargs[kwarg])
+
+
+dict_printer(**data)
